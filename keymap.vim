@@ -34,7 +34,7 @@ ino kj <esc>
 cno jj <c-c>
 vno v <esc>
 
-" Fold controll
+" Fold control
 map <leader>F       [fold]
 map [fold]o         :foldopen<CR>
 map [fold]c         :foldclose<CR>
@@ -88,7 +88,8 @@ inoremap <expr> <S-Tab>         pumvisible() ? "<C-p>" : "<S-Tab>"
 "------------------------------"
 "            nerdtree          "
 "------------------------------"
-nnoremap <leader>pv     :NERDTreeVCS<CR>
+nnoremap <leader>pv     :NERDTreeToggleVCS<CR>
+nnoremap <leader>pf     :NERDTreeFocus<CR>
 " nnoremap <leader>pv     :CHADopen<CR>
 
 
@@ -141,10 +142,29 @@ inoremap <silent><expr> <C-e>       compe#close('<C-e>')
 "------------------------------"
 "        telescope.nvim        "
 "------------------------------"
-" Find files using Telescope command-line sugar.
-nnoremap <leader>ff     :Telescope find_files<CR>
-nnoremap <leader>fg     :Telescope live_grep<CR>
-nnoremap <leader>fb     :Telescope buffers<CR>
-nnoremap <leader>fh     :Telescope help_tags<CR>
+" " Find files using Telescope command-line sugar.
+" nnoremap <leader>ff     :Telescope find_files<CR>
+" nnoremap <leader>fg     :Telescope live_grep<CR>
+" nnoremap <leader>fb     :Telescope buffers<CR>
+" nnoremap <leader>fh     :Telescope help_tags<CR>
 
+
+"------------------------------"
+"       fzf / fzf.vim         "
+"------------------------------"
+nnoremap <leader>ff     :Files<CR>
+nnoremap <leader>fg     :Rg<CR>
+nnoremap <leader>fh     :History<CR>
+nnoremap <leader>f/     :History/<CR>
+nnoremap <leader>f:     :History:<CR>
+
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-l> <plug>(fzf-complete-line)
 
