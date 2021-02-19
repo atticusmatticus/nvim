@@ -32,15 +32,23 @@ au Syntax * RainbowParenthesesLoadBraces
 exec 'luafile' expand(g:custom_path . 'lua/nvim-treesitter.lua')
  
 "======================================="
+"            fzf / fzf.vim              "
+"======================================="
+" Colors, other customizations?
+
+"======================================="
 "           telescope.nvim              "
 "======================================="
-exec 'luafile' expand(g:custom_path . 'lua/nvim-telescope.lua')
+" exec 'luafile' expand(g:custom_path . 'lua/nvim-telescope.lua')
  
 "======================================="
 "              nerdtree                 "
 "======================================="
+" Start NERDTree. If a file is specified, move the cursor to its window.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
 " open vim with nerdtree open
-autocmd VimEnter * NERDTreeVCS
+" autocmd VimEnter * NERDTreeVCS
 let NERDTreeShowHidden=1
 
 "======================================="

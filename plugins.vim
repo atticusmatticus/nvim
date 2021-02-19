@@ -5,8 +5,8 @@ call plug#begin()
 "======================================="
 Plug 'mbbill/undotree'
 " Plug 'ctrlpvim/ctrlp.vim' " File finder
-" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround' " (o_o) -> cs([ -> [o_o]
 Plug 'tpope/vim-commentary' " gcc -> Normal, gc -> Visual
 Plug 'jiangmiao/auto-pairs' " Matching parens, quotes etc.
@@ -39,13 +39,11 @@ Plug 'nvim-treesitter/nvim-treesitter', {'commit': '3c07232', 'do': ':TSUpdate'}
 "======================================="
 Plug 'preservim/nerdtree'
 " Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
-Plug 'nvim-lua/popup.nvim'      " telescope dependency
-Plug 'nvim-lua/plenary.nvim'    " telescope dependency
-Plug 'nvim-telescope/telescope.nvim'
 " Plug 'vimwiki/vimwiki'
 " Plug 'blindFS/vim-taskwarrior' " Task management
 " Plug 'tools-life/taskwiki'
 " Plug 'tpope/vim-fugitive'
+Plug 'jupyter-vim/jupyter-vim' " run jupyter notebooks in nvim
 
 "======================================="
 "    Experimental (testing plugins)     "
