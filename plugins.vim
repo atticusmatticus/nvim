@@ -23,7 +23,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'commit': '3c07232', 'do': ':TSUpdate'}
 " Plug 'nvim-treesitter/playground'
 " Plug 'aonemd/kuroi.vim'
 " Plug 'morhetz/gruvbox'
-" Plug 'jupyter-vim/jupyter-vim'
 
 "======================================="
 "      IDE (completion, debugging)      "
