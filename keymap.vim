@@ -57,14 +57,14 @@ nmap <leader>bp     :bp<CR>
 nmap <leader>bn     :bn<CR>
 
 """ Window mappings
-nnoremap <leader>h	            :wincmd h<CR>
-nnoremap <leader>j	            :wincmd j<CR>
-nnoremap <leader>k	            :wincmd k<CR>
-nnoremap <leader>l	            :wincmd l<CR>
-nnoremap <leader>H	            :wincmd H<CR>
-nnoremap <leader>J	            :wincmd J<CR>
-nnoremap <leader>K	            :wincmd K<CR>
-nnoremap <leader>L	            :wincmd L<CR>
+nnoremap <silent> <leader>h	            :wincmd h<CR>
+nnoremap <silent> <leader>j	            :wincmd j<CR>
+nnoremap <silent> <leader>k	            :wincmd k<CR>
+nnoremap <silent> <leader>l	            :wincmd l<CR>
+nnoremap <silent> <leader>H	            :wincmd H<CR>
+nnoremap <silent> <leader>J	            :wincmd J<CR>
+nnoremap <silent> <leader>K	            :wincmd K<CR>
+nnoremap <silent> <leader>L	            :wincmd L<CR>
 " nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <silent> <leader>+ 	:vertical resize +5<CR>
 nnoremap <silent> <leader>- 	:vertical resize -5<CR>
@@ -150,13 +150,15 @@ inoremap <silent><expr> <C-e>       compe#close('<C-e>')
 
 
 "------------------------------"
-"       fzf / fzf.vim         "
+"        fzf / fzf.vim         "
 "------------------------------"
 nnoremap <leader>ff     :Files<CR>
 nnoremap <leader>fg     :Rg<CR>
 nnoremap <leader>fh     :History<CR>
 nnoremap <leader>f/     :History/<CR>
 nnoremap <leader>f:     :History:<CR>
+nnoremap <leader>fc     :Commands<CR>
+nnoremap <leader>fm     :Maps<CR>
 
 " Mapping selecting mappings
 nmap <leader><tab> <plug>(fzf-maps-n)
@@ -167,4 +169,16 @@ omap <leader><tab> <plug>(fzf-maps-o)
 imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-l> <plug>(fzf-complete-line)
+
+
+"------------------------------"
+"         jupyter.vim          "
+"------------------------------"
+noremap <leader>nC     :JupyterConnect<cr>
+noremap <leader>nR     :JupyterRunFile<cr>
+noremap <leader>nc     :JupyterSendCell<cr>
+
+" Runs current line if no range given :[1,2]JupyterSendRange
+noremap <leader>nr     :JupyterSendRange<cr>
+
 

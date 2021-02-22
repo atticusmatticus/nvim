@@ -1,9 +1,8 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
-"source ~/.vim/vimrc
 
+" Define path nvimrc path and function to load files
 let g:custom_path = '~/.config/nvim/'
-
 func LoadConfig(name)
     exec 'source' g:custom_path . a:name . '.vim'
 endfunc

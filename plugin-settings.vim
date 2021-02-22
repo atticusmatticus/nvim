@@ -62,3 +62,9 @@ exec 'luafile' expand(g:custom_path . 'lua/nvim-lspconfig.lua')
 set completeopt=menu,menuone,noselect
 exec 'luafile' expand(g:custom_path . 'lua/nvim-compe.lua')
 
+"======================================="
+"            jupyter-vim                "
+"======================================="
+" Prevent default keybindings
+let g:jupyter_mapkeys = 0
+
