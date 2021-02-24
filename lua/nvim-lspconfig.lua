@@ -1,28 +1,4 @@
 local nvim_lsp = require('lspconfig')
-
--- Use ehanced LSP stuff lsputil
--- vim.lsp.handlers['textDocument/codeAction'] = require'lsputil.codeAction'.code_action_handler
--- vim.lsp.handlers['textDocument/references'] = require'lsputil.locations'.references_handler
--- vim.lsp.handlers['textDocument/definition'] = require'lsputil.locations'.definition_handler
--- vim.lsp.handlers['textDocument/declaration'] = require'lsputil.locations'.declaration_handler
--- vim.lsp.handlers['textDocument/typeDefinition'] = require'lsputil.locations'.typeDefinition_handler
--- vim.lsp.handlers['textDocument/implementation'] = require'lsputil.locations'.implementation_handler
--- vim.lsp.handlers['textDocument/documentSymbol'] = require'lsputil.symbols'.document_handler
--- vim.lsp.handlers['workspace/symbol'] = require'lsputil.symbols'.workspace_handler
-
-local chain_complete_list = {
-  default = {
-    {complete_items = {'lsp', 'snippet'}},
-    {complete_items = {'buffers'}},
-    {complete_items = {'path'}, triggered_only = {'/'}},
-  },
-  string = {
-    {complete_items = {'path'}, triggered_only = {'/'}},
-    {complete_items = {'buffers'}},
-  },
-  comment = {},
-}
-
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -71,10 +47,44 @@ end
 
 -- Use a loop to conveniently both setup defined servers 
 -- and map buffer local keybindings when the language server attaches
-local servers = { "bashls", "pyls", "vimls", "clangd", "fortls", "texlab", "r_language_server", "rnix"}
+-- local servers = { "pyls", "bashls", "vimls", "clangd", "fortls", "texlab", "r_language_server", "rnix"}
+local servers = { "bashls", "vimls", "clangd", "fortls", "texlab", "r_language_server", "rnix"}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
+
+-- jedi_language_server
+nvim_lsp.jedi_language_server.setup{
+    init_options = {
+        jediSettings = {
+            autoImportModules = { "fastai", "fastcore" }
+        }
+    },
+    on_attach = on_attach
+}
+-- nvim_lsp.pyls.setup{
+--     init_options = {
+--         jediSettings = {
+--             autoImportModules = { "fastai", "fastcore" }
+--         }
+--     },
+--     on_attach = on_attach
+-- }
+-- nvim_lsp.pyls.setup{
+--     on_attach = on_attach,
+--     init_options = {
+--         pyls = {
+--             plugins = {
+--                 preload = {
+--                     modules = { "fastai", "fastcore" }
+--                 }
+--             }
+--         }
+--     }
+-- }
+-- nvim_lsp.pyright.setup{
+--     on_attach = on_attach
+-- }
 
 -- display a float window with diagnostic info using saga
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
