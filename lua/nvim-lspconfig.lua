@@ -1,4 +1,18 @@
 local nvim_lsp = require('lspconfig')
+
+local chain_complete_list = {
+  default = {
+    {complete_items = {'lsp', 'snippet'}},
+    {complete_items = {'buffers'}},
+    {complete_items = {'path'}, triggered_only = {'/'}},
+  },
+  string = {
+    {complete_items = {'path'}, triggered_only = {'/'}},
+    {complete_items = {'buffers'}},
+  },
+  comment = {},
+}
+
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
