@@ -133,10 +133,56 @@ nnoremap <leader>u		:UndotreeShow<CR>
 "          nvim-compe          "
 "------------------------------"
 " default completion
-inoremap <silent><expr> <C-y>       compe#confirm('<C-y>', 'i')
+" inoremap <silent><expr> <C-y>       compe#confirm('<C-y>', 'i')
+inoremap <silent><expr> <C-y>       compe#complete()
 " inoremap <silent><expr> <C-Space>   compe#complete()
 inoremap <silent><expr> <CR>        compe#confirm('<CR>')
 inoremap <silent><expr> <C-e>       compe#close('<C-e>')
+
+
+"------------------------------"
+"        lspsaga.nvim          "
+"------------------------------"
+" lsp provider to find the cursor word definition and reference
+nnoremap <silent><leader>gh         :Lspsaga lsp_finder<CR>
+
+" code action
+nnoremap <silent><leader>ca         :Lspsaga code_action<CR>
+vnoremap <silent><leader>ca         :<C-U>Lspsaga range_code_action<CR>
+
+" show hover doc
+nnoremap <silent> K                 :Lspsaga hover_doc<CR>
+" scroll down hover doc or scroll in definition preview
+nnoremap <silent> <C-f>             <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
+" scroll up hover doc
+nnoremap <silent> <C-b>             <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
+
+" show signature help
+nnoremap <silent> <C-k>             :Lspsaga signature_help<CR>
+
+" rename
+" close rename win use <C-c> in insert mode or `q` in noremal mode or `:q`
+nnoremap <silent><leader>rn         :Lspsaga rename<CR>
+
+" preview definition
+nnoremap <silent><leader>d          :Lspsaga preview_definition<CR>
+
+" show diagnostics
+nnoremap <silent><leader>cd :Lspsaga show_line_diagnostics<CR>
+" jump diagnostic
+nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
+nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
+
+" float terminal also you can pass the cli command in open_float_terminal function
+nnoremap <silent> <A-d> :Lspsaga open_floaterm<CR>
+tnoremap <silent> <A-d> <C-\><C-n>:Lspsaga close_floaterm<CR>
+
+
+" display a float window with diagnostic info using saga
+" vim.cmd [[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()]]
+autocmd CursorHold * :Lspsaga show_line_diagnostics
+" vim.cmd [[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]]
+autocmd CursorHoldI * silent! :Lspsaga signature_help
 
 
 "------------------------------"

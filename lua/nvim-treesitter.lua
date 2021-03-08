@@ -1,10 +1,11 @@
 -- Enable supported features
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = "maintained",  -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   highlight = {
-    enable = true,              -- false will disable the whole extension
-    disable = { "rust" },  -- list of language that will be disabled
+    enable = true       -- false will disable the whole extension
   },
-  incremental_selection = { enable = true },
-  textobjects = { enable = true },
+  indent = {
+    enable = true       -- treesitter indentation
+  }
 }
+
