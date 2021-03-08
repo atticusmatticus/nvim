@@ -19,10 +19,11 @@ Plug 'itchyny/lightline.vim' " Nice bar
 " Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'Yggdroot/indentLine'
-Plug 'nvim-treesitter/nvim-treesitter', {'commit': '3c07232', 'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 " Plug 'nvim-treesitter/playground'
 " Plug 'aonemd/kuroi.vim'
 " Plug 'morhetz/gruvbox'
+Plug 'glepnir/lspsaga.nvim'
 
 "======================================="
 "      IDE (completion, debugging)      "
