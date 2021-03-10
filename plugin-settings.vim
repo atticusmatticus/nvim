@@ -7,8 +7,22 @@
 "======================================="
 "              lightline                "
 "======================================="
+" let g:lightline = {
+"       \ 'colorscheme': 'dracula_pro',
+"       \ }
 let g:lightline = {
       \ 'colorscheme': 'dracula_pro',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'inactive': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
       \ }
 
 "======================================="
