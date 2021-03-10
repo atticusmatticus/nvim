@@ -42,7 +42,7 @@ Plug 'preservim/nerdtree'
 " Plug 'vimwiki/vimwiki'
 " Plug 'blindFS/vim-taskwarrior' " Task management
 " Plug 'tools-life/taskwiki'
-" Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 Plug 'jupyter-vim/jupyter-vim' " run jupyter notebooks in nvim
 
 "======================================="
