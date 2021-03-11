@@ -172,7 +172,7 @@ nnoremap <silent> <C-k>             :Lspsaga signature_help<CR>
 nnoremap <silent><leader>rn         :Lspsaga rename<CR>
 
 " preview definition
-nnoremap <silent><leader>pd         :Lspsaga preview_definition<CR>
+nnoremap <silent><leader>dp         :Lspsaga preview_definition<CR>
 
 " show diagnostics
 nnoremap <silent><leader>dd         :Lspsaga show_line_diagnostics<CR>
