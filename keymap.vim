@@ -29,10 +29,10 @@ nnoremap <leader>S      :source ~/.config/nvim/init.vim<CR>
 
 """ Navigation and Key Functionality Mappings
 " Quiting and saving
-nnoremap <leader>q      :q<cr>
+nnoremap <leader>qq     :q<cr>
 nnoremap <leader>qa     :qa<cr>
-nnoremap <leader>w      :w<cr>
-nnoremap <leader>x      :x<cr>
+nnoremap <leader>ww     :w<cr>
+nnoremap <leader>xx     :x<cr>
 nnoremap <leader>xa     :xa<cr>
 
 " Escaping insert/visual modes
@@ -62,6 +62,8 @@ nmap <leader>b      :b<space>
 nmap <leader>bp     :bp<CR>
 " Go next
 nmap <leader>bn     :bn<CR>
+" Delete buffer
+nmap <leader>bd     :bd<CR>
 
 """ Window mappings
 nnoremap <silent> <leader>h	            :wincmd h<CR>
