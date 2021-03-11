@@ -27,7 +27,14 @@ nnoremap <leader>st     :sp<CR>:wincmd j<CR>:terminal<CR>
 " Sourch Nvim
 nnoremap <leader>S      :source ~/.config/nvim/init.vim<CR>
 
-""" Navigation Mappings
+""" Navigation and Key Functionality Mappings
+" Quiting and saving
+nnoremap <leader>q      :q<cr>
+nnoremap <leader>qa     :qa<cr>
+nnoremap <leader>w      :w<cr>
+nnoremap <leader>x      :x<cr>
+nnoremap <leader>xa     :xa<cr>
+
 " Escaping insert/visual modes
 ino jk <esc>
 ino kj <esc>
@@ -165,24 +172,24 @@ nnoremap <silent> <C-k>             :Lspsaga signature_help<CR>
 nnoremap <silent><leader>rn         :Lspsaga rename<CR>
 
 " preview definition
-nnoremap <silent><leader>d          :Lspsaga preview_definition<CR>
+nnoremap <silent><leader>pd         :Lspsaga preview_definition<CR>
 
 " show diagnostics
-nnoremap <silent><leader>cd :Lspsaga show_line_diagnostics<CR>
+nnoremap <silent><leader>dd         :Lspsaga show_line_diagnostics<CR>
 " jump diagnostic
-nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
-nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
+nnoremap <silent> [e                :Lspsaga diagnostic_jump_next<CR>
+nnoremap <silent> ]e                :Lspsaga diagnostic_jump_prev<CR>
 
 " float terminal also you can pass the cli command in open_float_terminal function
-nnoremap <silent> <A-d> :Lspsaga open_floaterm<CR>
-tnoremap <silent> <A-d> <C-\><C-n>:Lspsaga close_floaterm<CR>
+nnoremap <silent> <A-d>             :Lspsaga open_floaterm<CR>
+tnoremap <silent> <A-d> <C-\><C-n>  :Lspsaga close_floaterm<CR>
 
 
 " display a float window with diagnostic info using saga
 " vim.cmd [[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()]]
-autocmd CursorHold * :Lspsaga show_line_diagnostics
+" autocmd CursorHold *                :Lspsaga show_line_diagnostics
 " vim.cmd [[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]]
-autocmd CursorHoldI * silent! :Lspsaga signature_help
+autocmd CursorHoldI * silent!       :Lspsaga signature_help
 
 
 "------------------------------"
@@ -220,11 +227,11 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 "------------------------------"
 "         jupyter.vim          "
 "------------------------------"
-noremap <leader>nC     :JupyterConnect<cr>
-noremap <leader>nR     :JupyterRunFile<cr>
-noremap <leader>nc     :JupyterSendCell<cr>
+noremap <leader>nC      :JupyterConnect<cr>
+noremap <leader>nR      :JupyterRunFile<cr>
+noremap <leader>nc      :JupyterSendCell<cr>
 
 " Runs current line if no range given :[1,2]JupyterSendRange
-noremap <leader>nr     :JupyterSendRange<cr>
+noremap <leader>nr      :JupyterSendRange<cr>
 
 
