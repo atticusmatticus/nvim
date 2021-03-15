@@ -75,8 +75,10 @@ nnoremap <silent> <leader>J	            :wincmd J<CR>
 nnoremap <silent> <leader>K	            :wincmd K<CR>
 nnoremap <silent> <leader>L	            :wincmd L<CR>
 " nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
-nnoremap <silent> <leader>+ 	:vertical resize +5<CR>
-nnoremap <silent> <leader>- 	:vertical resize -5<CR>
+nnoremap <silent> <leader>v+ 	:vertical resize +5<CR>
+nnoremap <silent> <leader>v- 	:vertical resize -5<CR>
+nnoremap <silent> <leader>+ 	:resize +5<CR>
+nnoremap <silent> <leader>- 	:resize -5<CR>
 
 """ Popup menu remappings
 inoremap <expr> <C-j>           pumvisible() ? "<C-n>" : "<C-j>"
