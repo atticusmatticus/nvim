@@ -9,7 +9,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround' " (o_o) -> cs([ -> [o_o]
 Plug 'tpope/vim-commentary' " gcc -> Normal, gc -> Visual
-Plug 'jiangmiao/auto-pairs' " Matching parens, quotes etc.
+" Plug 'jiangmiao/auto-pairs' " Matching parens, quotes etc.
+Plug 'cohama/lexima.vim' " Matching parens, quotes etc.
+
 
 "======================================="
 "               UI plugins              "
