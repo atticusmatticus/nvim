@@ -66,36 +66,6 @@ for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
 
--- jedi_language_server
--- nvim_lsp.jedi_language_server.setup{
---     init_options = {
---         jediSettings = {
---             autoImportModules = { "fastai", "fastcore" }
---         }
---     },
---     on_attach = on_attach
--- }
--- nvim_lsp.pyls.setup{
---     init_options = {
---         jediSettings = {
---             autoImportModules = { "fastai", "fastcore" }
---         }
---     },
---     on_attach = on_attach
--- }
--- nvim_lsp.pyls.setup{
---     on_attach = on_attach,
---     init_options = {
---         pyls = {
---             plugins = {
---                 preload = {
---                     modules = { "fastai", "fastcore" }
---                 }
---             }
---         }
---     }
--- }
-
 -- display a float window with diagnostic info using saga
 -- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 --   vim.lsp.diagnostic.on_publish_diagnostics, {
