@@ -31,7 +31,7 @@ require('github-theme').setup({
     sidebars        = {'qf', 'vista_kind', 'terminal', 'packer'},
     darkSidebar     = 'true',
     darkFloat       = 'true',
-    colors = {bg = "#f6f6f6", hint = "orange", error = "#ff0000"}
+    colors = {hint = "orange", error = "#ff0000"}
 })
 EOF
 
