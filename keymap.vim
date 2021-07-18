@@ -32,6 +32,7 @@ nnoremap <leader>S      :source ~/.config/nvim/init.vim<CR>
 nnoremap <leader>qq     :q<cr>
 nnoremap <leader>qa     :qa<cr>
 nnoremap <leader>ww     :w<cr>
+nnoremap <leader>wa     :wa<cr>
 nnoremap <leader>xx     :x<cr>
 nnoremap <leader>xa     :xa<cr>
 
@@ -43,6 +44,8 @@ vno v <esc>
 
 " Fold control
 map <leader>F       [fold]
+map [fold]f         :zf<CR>
+map [fold]d         :zd<CR>
 map [fold]o         :foldopen<CR>
 map [fold]c         :foldclose<CR>
 
@@ -138,6 +141,12 @@ nnoremap <leader>pf     :NERDTreeFocus<CR>
 "           undotree           "
 "------------------------------"
 nnoremap <leader>u		:UndotreeShow<CR>
+
+
+"------------------------------"
+"        nvim-lspconfig        "
+"------------------------------"
+nnoremap <leader>dc     :lua vim.lsp.diagnostic.clear(0)<CR>
 
 
 "------------------------------"
