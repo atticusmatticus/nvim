@@ -5,31 +5,75 @@
 " autocmd FileType apache setlocal commentstring=#\ %s
 
 "======================================="
-"              lightline                "
+"               lualine                 "
 "======================================="
+" Dracula Color Settings: 'dracula-nvim' or 'papercolor_light'
+lua << EOF
+require('lualine').setup {
+    options = {
+        icons_enabled = true,
+        theme = 'solarized_light',
+        component_separators = {'', ''},
+        section_separators = {'', ''},
+        disabled_filetypes = {}
+    },
+    sections = {
+        lualine_a = {'mode'},
+        lualine_b = {'branch'},
+        lualine_c = {'filename'},
+        lualine_x = {'encoding', 'fileformat', 'filetype'},
+        lualine_y = {'progress'},
+        lualine_z = {'location'}
+    },
+    inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {'filename'},
+        lualine_x = {'location'},
+        lualine_y = {},
+        lualine_z = {}
+    },
+    tabline = {},
+    extensions = {'fugitive', 'nerdtree'}
+}
+EOF
 " let g:lightline = {
 "       \ 'colorscheme': 'dracula_pro',
+"       \ 'active': {
+"       \   'left': [ [ 'mode', 'paste' ],
+"       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+"       \ },
+"       \ 'inactive': {
+"       \   'left': [ [ 'mode', 'paste' ],
+"       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+"       \ },
+"       \ 'component_function': {
+"       \   'gitbranch': 'FugitiveHead'
+"       \ },
 "       \ }
-let g:lightline = {
-      \ 'colorscheme': 'dracula_pro',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'inactive': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
-      \ },
-      \ }
+
+" OneHalfLight Color Settings
+" let g:lightline = {
+"       \ 'colorscheme': 'PaperColor',
+"       \ 'active': {
+"       \   'left': [ [ 'mode', 'paste' ],
+"       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+"       \ },
+"       \ 'inactive': {
+"       \   'left': [ [ 'mode', 'paste' ],
+"       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+"       \ },
+"       \ 'component_function': {
+"       \   'gitbranch': 'FugitiveHead'
+"       \ },
+"       \ }
 
 "======================================="
 "              indentLine               "
 "======================================="
 let g:indentLine_char = '▏'
 let g:indentLine_color_term = 237
+let g:indentLine_fileTypeExclude = ['markdown']
 
 "======================================="
 "          rainbow_parentheses          "
