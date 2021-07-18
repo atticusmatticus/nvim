@@ -16,16 +16,18 @@ Plug 'cohama/lexima.vim' " Matching parens, quotes etc.
 "======================================="
 "               UI plugins              "
 "======================================="
-Plug 'itchyny/lightline.vim' " Nice bar
-" Plug 'luochen1990/rainbow'
-" Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'Mofiqul/dracula.nvim' " for dracula lualine theme
+Plug 'projekt0n/github-nvim-theme'
+Plug 'hoob3rt/lualine.nvim' " lightline replacement
+Plug 'kyazdani42/nvim-web-devicons' " icons for lualine
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-" Plug 'nvim-treesitter/playground'
-" Plug 'aonemd/kuroi.vim'
 " Plug 'morhetz/gruvbox'
 Plug 'glepnir/lspsaga.nvim'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'NLKNguyen/papercolor-theme'
+
 
 "======================================="
 "      IDE (completion, debugging)      "
