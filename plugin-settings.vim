@@ -7,12 +7,12 @@
 "======================================="
 "               lualine                 "
 "======================================="
-" Dracula Color Settings: 'dracula-nvim' or 'papercolor_light'
+" Dracula Color Settings: 'dracula-nvim' or 'solarized_light'
 lua << EOF
 require('lualine').setup {
     options = {
         icons_enabled = true,
-        theme = 'solarized_light',
+        theme = 'dracula-nvim',
         component_separators = {'', ''},
         section_separators = {'', ''},
         disabled_filetypes = {}
@@ -37,36 +37,6 @@ require('lualine').setup {
     extensions = {'fugitive', 'nerdtree'}
 }
 EOF
-" let g:lightline = {
-"       \ 'colorscheme': 'dracula_pro',
-"       \ 'active': {
-"       \   'left': [ [ 'mode', 'paste' ],
-"       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-"       \ },
-"       \ 'inactive': {
-"       \   'left': [ [ 'mode', 'paste' ],
-"       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-"       \ },
-"       \ 'component_function': {
-"       \   'gitbranch': 'FugitiveHead'
-"       \ },
-"       \ }
-
-" OneHalfLight Color Settings
-" let g:lightline = {
-"       \ 'colorscheme': 'PaperColor',
-"       \ 'active': {
-"       \   'left': [ [ 'mode', 'paste' ],
-"       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-"       \ },
-"       \ 'inactive': {
-"       \   'left': [ [ 'mode', 'paste' ],
-"       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-"       \ },
-"       \ 'component_function': {
-"       \   'gitbranch': 'FugitiveHead'
-"       \ },
-"       \ }
 
 "======================================="
 "              indentLine               "
@@ -79,10 +49,10 @@ let g:indentLine_fileTypeExclude = ['markdown']
 "          rainbow_parentheses          "
 "======================================="
 " rainbow_parentheses.vim always on
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
 
 "======================================="
 "           nvim-treesitter             "
@@ -126,3 +96,6 @@ exec 'luafile' expand(g:custom_path . 'lua/nvim-compe.lua')
 " Prevent default keybindings
 let g:jupyter_mapkeys = 0
 
+"======================================="
+"              suda.vim                 "
+"======================================="

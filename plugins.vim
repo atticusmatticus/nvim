@@ -11,6 +11,7 @@ Plug 'tpope/vim-surround' " (o_o) -> cs([ -> [o_o]
 Plug 'tpope/vim-commentary' " gcc -> Normal, gc -> Visual
 " Plug 'jiangmiao/auto-pairs' " Matching parens, quotes etc.
 Plug 'cohama/lexima.vim' " Matching parens, quotes etc.
+Plug 'lambdalisue/suda.vim' " read or write files with `sudo` command
 
 
 "======================================="
@@ -20,7 +21,7 @@ Plug 'Mofiqul/dracula.nvim' " for dracula lualine theme
 Plug 'projekt0n/github-nvim-theme'
 Plug 'hoob3rt/lualine.nvim' " lightline replacement
 Plug 'kyazdani42/nvim-web-devicons' " icons for lualine
-Plug 'kien/rainbow_parentheses.vim'
+" Plug 'kien/rainbow_parentheses.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 " Plug 'morhetz/gruvbox'
