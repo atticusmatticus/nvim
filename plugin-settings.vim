@@ -2,7 +2,8 @@
 "           vim-commentary              "
 "======================================="
 " Add comment character '#' for unsupported filetype
-" autocmd FileType apache setlocal commentstring=#\ %s
+autocmd FileType json setlocal commentstring=#\ %s
+
 
 "======================================="
 "               lualine                 "
