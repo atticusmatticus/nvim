@@ -11,6 +11,7 @@ endfunc
 " colorscheme gruvbox
 " let g:gruvbox_contrast_dark='hard'
 
+if has('nvim')
 " Dracula Color Settings
 let g:dracula_colorterm = 0
 set termguicolors
@@ -34,6 +35,8 @@ call LoadConfig('keymap')
 "     colors = {hint = "orange", error = "#ff0000"}
 " })
 " EOF
+elseif exists('g:vscode')
+endif
 
 set nocompatible
 

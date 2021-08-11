@@ -53,9 +53,12 @@ Plug 'jupyter-vim/jupyter-vim' " run jupyter notebooks in nvim
 "======================================="
 "    Experimental (testing plugins)     "
 "======================================="
+if has('nvim')
 Plug 'neovim/nvim-lspconfig' " LSP configurations for builtin LSP client
 Plug 'hrsh7th/nvim-compe' " LSP Completion
 " Plug 'RishabhRD/popfix'
 " Plug 'RishabhRD/nvim-lsputils' " Enhance built in LSP functions
+elseif exists('g:vscode')
+endif
 
 call plug#end()
