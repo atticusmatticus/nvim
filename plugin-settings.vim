@@ -8,12 +8,12 @@ autocmd FileType json setlocal commentstring=#\ %s
 "======================================="
 "               lualine                 "
 "======================================="
-" Dracula Color Settings: 'dracula-nvim' or 'solarized_light'
+" Dracula Color Settings: 'dracula-nvim', 'onelight', or 'solarized_light'
 lua << EOF
 require('lualine').setup {
     options = {
         icons_enabled = true,
-        theme = 'dracula-nvim',
+        theme = 'onelight',
         component_separators = {'', ''},
         section_separators = {'', ''},
         disabled_filetypes = {}
@@ -63,7 +63,22 @@ exec 'luafile' expand(g:custom_path . 'lua/nvim-treesitter.lua')
 "======================================="
 "            fzf / fzf.vim              "
 "======================================="
-" Colors, other customizations?
+" Customize fzf colors to match your color scheme
+" - fzf#wrap translates this to a set of `--color` options
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 "======================================="
 "           telescope.nvim              "
@@ -74,11 +89,24 @@ exec 'luafile' expand(g:custom_path . 'lua/nvim-treesitter.lua')
 "              nerdtree                 "
 "======================================="
 " Start NERDTree. If a file is specified, move the cursor to its window.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
 " open vim with nerdtree open
-" autocmd VimEnter * NERDTreeVCS
-let NERDTreeShowHidden=1
+" let NERDTreeShowHidden=1
+
+"======================================="
+"              CHADtree                 "
+"======================================="
+let g:chadtree_settings =
+            \ {
+                \ "view":
+                \ {
+                    \ "width": 35
+                \ }
+            \ }
+
+" Start CHADtree automatically on launch
+autocmd VimEnter * CHADopen
 
 "======================================="
 "           nvim-lspconfig              "
@@ -86,10 +114,18 @@ let NERDTreeShowHidden=1
 exec 'luafile' expand(g:custom_path . 'lua/nvim-lspconfig.lua')
 
 "======================================="
+"              coq_nvim                 "
+"======================================="
+" launch :COQnow when nvim starts
+let g:coq_settings = { 'auto_start': v:true } "| 'shut-up' }
+" launch :COQnow when nvim starts without launch message
+" let g:coq_settings = { 'auto_start': 'shut-up' }
+
+"======================================="
 "            nvim-compe                 "
 "======================================="
-set completeopt=menu,menuone,noselect
-exec 'luafile' expand(g:custom_path . 'lua/nvim-compe.lua')
+" set completeopt=menu,menuone,noselect
+" exec 'luafile' expand(g:custom_path . 'lua/nvim-compe.lua')
 
 "======================================="
 "            jupyter-vim                "
