@@ -12,16 +12,23 @@ endfunc
 " let g:gruvbox_contrast_dark='hard'
 
 if has('nvim')
+
 " Dracula Color Settings
-let g:dracula_colorterm = 0
-set termguicolors
-colorscheme dracula_pro
-set background=dark
+" let g:dracula_colorterm = 0
+" set termguicolors
+" colorscheme dracula_pro
+" set background=dark
 
 call LoadConfig('plugins')
 call LoadConfig('base')
 call LoadConfig('plugin-settings')
 call LoadConfig('keymap')
+
+" One Color Settings
+set termguicolors
+colorscheme one
+set background=light " light version
+let g:one_allow_italics = 1
 
 " GitHub Light Color Settings
 " lua << EOF
@@ -35,7 +42,14 @@ call LoadConfig('keymap')
 "     colors = {hint = "orange", error = "#ff0000"}
 " })
 " EOF
+
 elseif exists('g:vscode')
+
+call LoadConfig('plugins')
+call LoadConfig('base')
+call LoadConfig('plugin-settings')
+call LoadConfig('keymap')
+
 endif
 
 set nocompatible
@@ -45,7 +59,7 @@ set nocompatible
 " Overwrite colorscheme CursorLineNR settings
 highlight clear CursorLine
 highlight clear CursorLineNR
-highlight CursorLineNR gui=bold guifg=Yellow
-" highlight CursorLineNR gui=bold guifg=DarkBlue
+" highlight CursorLineNR gui=bold guifg=Yellow
+highlight CursorLineNR gui=bold guifg=Blue
 
 set inccommand=split

@@ -49,9 +49,9 @@ local on_attach = function(client, bufnr)
   -- Dark highlight color: #393649
   if client.resolved_capabilities.document_highlight then
     vim.api.nvim_exec([[
-      hi LspReferenceRead  gui=none	guibg=#393649
-      hi LspReferenceText  gui=none	guibg=#393649
-      hi LspReferenceWrite gui=none	guibg=#393649
+      hi LspReferenceRead  gui=none	guibg=#b2dbe7
+      hi LspReferenceText  gui=none	guibg=#b2dbe7
+      hi LspReferenceWrite gui=none	guibg=#b2dbe7
       augroup lsp_document_highlight
         autocmd!
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
