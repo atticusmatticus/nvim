@@ -100,11 +100,11 @@ inoremap <expr> <S-Tab>         pumvisible() ? "<C-p>" : "<S-Tab>"
 "======================================="
 
 "------------------------------"
-"            nerdtree          "
+"     nerdtree/CHADtree        "
 "------------------------------"
-nnoremap <leader>pv     :NERDTreeToggleVCS<CR>
-nnoremap <leader>pf     :NERDTreeFocus<CR>
-" nnoremap <leader>pv     :CHADopen<CR>
+" nnoremap <leader>pv     :NERDTreeToggleVCS<CR>
+" nnoremap <leader>pf     :NERDTreeFocus<CR>
+nnoremap <leader>pv     :CHADopen<CR>
 
 
 "------------------------------"
@@ -153,11 +153,9 @@ nnoremap <leader>dc     :lua vim.lsp.diagnostic.clear(0)<CR>
 "          nvim-compe          "
 "------------------------------"
 " default completion
-" inoremap <silent><expr> <C-y>       compe#confirm('<C-y>', 'i')
-inoremap <silent><expr> <C-y>       compe#complete()
-" inoremap <silent><expr> <C-Space>   compe#complete()
-inoremap <silent><expr> <CR>        compe#confirm('<CR>')
-inoremap <silent><expr> <C-e>       compe#close('<C-e>')
+" inoremap <silent><expr> <C-y>       compe#complete()
+" inoremap <silent><expr> <CR>        compe#confirm('<CR>')
+" inoremap <silent><expr> <C-e>       compe#close('<C-e>')
 
 
 "------------------------------"
