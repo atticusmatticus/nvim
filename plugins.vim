@@ -19,6 +19,7 @@ Plug 'lambdalisue/suda.vim' " read or write files with `sudo` command
 "======================================="
 Plug 'Mofiqul/dracula.nvim' " for dracula lualine theme
 Plug 'projekt0n/github-nvim-theme'
+Plug 'rakr/vim-one'
 Plug 'hoob3rt/lualine.nvim' " lightline replacement
 Plug 'kyazdani42/nvim-web-devicons' " icons for lualine
 " Plug 'kien/rainbow_parentheses.vim'
@@ -42,8 +43,8 @@ Plug 'NLKNguyen/papercolor-theme'
 "======================================="
 "           Workflow plugins            "
 "======================================="
-Plug 'preservim/nerdtree'
-" Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
+" Plug 'preservim/nerdtree'
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 " Plug 'vimwiki/vimwiki'
 " Plug 'blindFS/vim-taskwarrior' " Task management
 " Plug 'tools-life/taskwiki'
@@ -55,7 +56,9 @@ Plug 'jupyter-vim/jupyter-vim' " run jupyter notebooks in nvim
 "======================================="
 if has('nvim')
 Plug 'neovim/nvim-lspconfig' " LSP configurations for builtin LSP client
-Plug 'hrsh7th/nvim-compe' " LSP Completion
+" Plug 'hrsh7th/nvim-compe' " LSP Completion
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'} " fast nvim completion main 
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} " snippets
 " Plug 'RishabhRD/popfix'
 " Plug 'RishabhRD/nvim-lsputils' " Enhance built in LSP functions
 elseif exists('g:vscode')
