@@ -31,7 +31,7 @@ set cmdheight=2 " give more space for displaying messages
 let g:tex_conceal = 0 " dont glyphify characters
 
 " Set default shell for neovim terminal buffer
-set shell=/usr/local/bin/zsh
+set shell=/opt/homebrew/bin/zsh
 
 
 " Asterisk works same in visual mode as normal mode.
