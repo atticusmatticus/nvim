@@ -102,9 +102,9 @@ inoremap <expr> <S-Tab>         pumvisible() ? "<C-p>" : "<S-Tab>"
 "------------------------------"
 "     nerdtree/CHADtree        "
 "------------------------------"
-" nnoremap <leader>pv     :NERDTreeToggleVCS<CR>
-" nnoremap <leader>pf     :NERDTreeFocus<CR>
-nnoremap <leader>pv     :CHADopen<CR>
+nnoremap <leader>pv     :NERDTreeToggleVCS<CR>
+nnoremap <leader>pf     :NERDTreeFocus<CR>
+" nnoremap <leader>pv     :CHADopen<CR>
 
 
 "------------------------------"
