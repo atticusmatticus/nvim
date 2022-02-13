@@ -43,8 +43,8 @@ Plug 'NLKNguyen/papercolor-theme'
 "======================================="
 "           Workflow plugins            "
 "======================================="
-" Plug 'preservim/nerdtree'
-Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
+Plug 'preservim/nerdtree'
+" Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 " Plug 'vimwiki/vimwiki'
 " Plug 'blindFS/vim-taskwarrior' " Task management
 " Plug 'tools-life/taskwiki'
