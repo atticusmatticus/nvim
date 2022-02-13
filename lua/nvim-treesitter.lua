@@ -6,9 +6,9 @@ require'nvim-treesitter.configs'.setup {
     },
     indent = {
         enable = true       -- treesitter indentation
-    },
-    ignore_install = {
-        "norg"
-    }
+    }--,
+    -- ignore_install = {
+    --     "norg"
+    -- }
 }
 
