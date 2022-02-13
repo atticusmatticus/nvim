@@ -13,7 +13,7 @@ lua << EOF
 require('lualine').setup {
     options = {
         icons_enabled = true,
-        theme = 'onelight',
+        theme = 'dracula-nvim',
         component_separators = {'', ''},
         section_separators = {'', ''},
         disabled_filetypes = {}
@@ -63,6 +63,8 @@ exec 'luafile' expand(g:custom_path . 'lua/nvim-treesitter.lua')
 "======================================="
 "            fzf / fzf.vim              "
 "======================================="
+" If installed using Homebrew
+set rtp+=/opt/homebrew/opt/fzf
 " Customize fzf colors to match your color scheme
 " - fzf#wrap translates this to a set of `--color` options
 let g:fzf_colors =
@@ -86,27 +88,42 @@ let g:fzf_colors =
 " exec 'luafile' expand(g:custom_path . 'lua/nvim-telescope.lua')
  
 "======================================="
-"              nerdtree                 "
+"              NERDtree                 "
 "======================================="
 " Start NERDTree. If a file is specified, move the cursor to its window.
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
 " open vim with nerdtree open
-" let NERDTreeShowHidden=1
+let NERDTreeShowHidden=1
 
 "======================================="
 "              CHADtree                 "
 "======================================="
-let g:chadtree_settings =
-            \ {
-                \ "view":
-                \ {
-                    \ "width": 35
-                \ }
-            \ }
+" let g:chadtree_settings =
+"             \ {
+"                 \ "view":
+"                 \ {
+"                     \ "width": 35
+"                 \ },
+"                 \ "theme":
+"                 \ {
+"                     \ "text_colour_set": "nerdtree_syntax_dark"
+"                 \ }
+"             \ }
+" " Start NERDTree. If a file is specified, move the cursor to its window.
+" " autocmd StdinReadPre * let s:std_in=1
+" " autocmd VimEnter * CHADopen | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+" function s:chadOpen()
+"     CHADopen
+"     if argc() > 0 || exists("s:std_in")
+"         wincmd p
+"     endif
+" endfunction
+
+" autocmd VimEnter * call s:chadOpen()
 
 " Start CHADtree automatically on launch
-autocmd VimEnter * CHADopen
+" autocmd VimEnter * CHADopen
 
 "======================================="
 "           nvim-lspconfig              "
