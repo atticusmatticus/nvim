@@ -14,10 +14,10 @@ endfunc
 if has('nvim')
 
 " Dracula Color Settings
-" let g:dracula_colorterm = 0
-" set termguicolors
-" colorscheme dracula_pro
-" set background=dark
+let g:dracula_colorterm = 0
+set termguicolors
+colorscheme dracula_pro
+set background=dark
 
 call LoadConfig('plugins')
 call LoadConfig('base')
@@ -25,21 +25,21 @@ call LoadConfig('plugin-settings')
 call LoadConfig('keymap')
 
 " One Color Settings
-set termguicolors
-colorscheme one
-set background=light " light version
-let g:one_allow_italics = 1
+" set termguicolors
+" colorscheme one
+" set background=light " light version
+" let g:one_allow_italics = 1
 
 " GitHub Light Color Settings
 " lua << EOF
 " require('github-theme').setup({
-"     themeStyle      = 'light',
-"     commentStyle    = 'italic',
-"     functionStyle   = 'italic',
-"     sidebars        = {'qf', 'vista_kind', 'terminal', 'packer'},
-"     darkSidebar     = 'true',
-"     darkFloat       = 'true',
-"     colors = {hint = "orange", error = "#ff0000"}
+"     theme_style         = 'light',
+"     comment_style       = 'italic',
+"     function_style      = 'italic',
+"     sidebars            = {'qf', 'vista_kind', 'terminal', 'packer'},
+"     dark_sidebar        = 'true',
+"     dark_float          = 'true',
+"     colors              = {hint = "orange", error = "#ff0000"}
 " })
 " EOF
 
@@ -59,7 +59,7 @@ set nocompatible
 " Overwrite colorscheme CursorLineNR settings
 highlight clear CursorLine
 highlight clear CursorLineNR
-" highlight CursorLineNR gui=bold guifg=Yellow
-highlight CursorLineNR gui=bold guifg=Blue
+highlight CursorLineNR gui=bold guifg=Yellow
+" highlight CursorLineNR gui=bold guifg=Blue
 
 set inccommand=split
