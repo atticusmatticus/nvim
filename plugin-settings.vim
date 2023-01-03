@@ -1,4 +1,9 @@
 "======================================="
+"       persistent signature help       "
+"======================================="
+" exec 'luafile' expand(g:custom_path . 'lua/signature.lua')
+
+"======================================="
 "           vim-commentary              "
 "======================================="
 " Add comment character '#' for unsupported filetype
@@ -8,7 +13,7 @@ autocmd FileType json setlocal commentstring=#\ %s
 "======================================="
 "               lualine                 "
 "======================================="
-" Dracula Color Settings: 'dracula-nvim', 'onelight', or 'solarized_light'
+" Dracula Color Settings: 'dracula-nvim', 'onelight', 'everforest', or 'solarized_light'
 lua << EOF
 require('lualine').setup {
     options = {
@@ -148,7 +153,7 @@ let g:coq_settings = { 'auto_start': v:true } "| 'shut-up' }
 "            jupyter-vim                "
 "======================================="
 " Prevent default keybindings
-let g:jupyter_mapkeys = 0
+" let g:jupyter_mapkeys = 0
 
 "======================================="
 "              suda.vim                 "

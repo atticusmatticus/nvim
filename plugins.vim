@@ -26,9 +26,10 @@ Plug 'kyazdani42/nvim-web-devicons' " icons for lualine
 Plug 'Yggdroot/indentLine'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 " Plug 'morhetz/gruvbox'
-Plug 'glepnir/lspsaga.nvim'
+" Plug 'glepnir/lspsaga.nvim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'sainnhe/everforest'
 
 
 "======================================="
@@ -49,7 +50,7 @@ Plug 'preservim/nerdtree'
 " Plug 'blindFS/vim-taskwarrior' " Task management
 " Plug 'tools-life/taskwiki'
 Plug 'tpope/vim-fugitive'
-Plug 'jupyter-vim/jupyter-vim' " run jupyter notebooks in nvim
+" Plug 'jupyter-vim/jupyter-vim' " run jupyter notebooks in nvim
 
 "======================================="
 "    Experimental (testing plugins)     "

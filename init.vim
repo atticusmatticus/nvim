@@ -7,48 +7,64 @@ func LoadConfig(name)
     exec 'source' g:custom_path . a:name . '.vim'
 endfunc
 
-" GruvBox Color Settings
+"" GruvBox Color Settings
 " colorscheme gruvbox
 " let g:gruvbox_contrast_dark='hard'
 
-if has('nvim')
 
-" Dracula Color Settings
-let g:dracula_colorterm = 0
-set termguicolors
-colorscheme dracula_pro
-set background=dark
+if exists('g:vscode')
+    " set termguicolors
 
-call LoadConfig('plugins')
-call LoadConfig('base')
-call LoadConfig('plugin-settings')
-call LoadConfig('keymap')
+    call LoadConfig('plugins_vscode')
+    call LoadConfig('base')
+    call LoadConfig('plugin-settings')
+    call LoadConfig('keymap')
 
-" One Color Settings
-" set termguicolors
-" colorscheme one
-" set background=light " light version
-" let g:one_allow_italics = 1
+else
+    "" Dracula Color Settings
+    let g:dracula_colorterm = 0
+    set termguicolors
+    colorscheme dracula_pro
+    set background=dark
 
-" GitHub Light Color Settings
-" lua << EOF
-" require('github-theme').setup({
-"     theme_style         = 'light',
-"     comment_style       = 'italic',
-"     function_style      = 'italic',
-"     sidebars            = {'qf', 'vista_kind', 'terminal', 'packer'},
-"     dark_sidebar        = 'true',
-"     dark_float          = 'true',
-"     colors              = {hint = "orange", error = "#ff0000"}
-" })
-" EOF
+    call LoadConfig('plugins')
+    call LoadConfig('base')
+    call LoadConfig('plugin-settings')
+    call LoadConfig('keymap')
 
-elseif exists('g:vscode')
+    "" Everforest
+    " if has('termguicolors')
+    "     set termguicolors
+    " endif
+    " " For dark version.
+    " " set background=dark
+    " " For light version.
+    " set background=light
+    " " Set contrast. This configuration option should be placed before `colorscheme everforest`.
+    " " Available values: 'hard', 'medium'(default), 'soft'
+    " let g:everforest_background = 'medium'
+    " " For better performance
+    " let g:everforest_better_performance = 1
+    " colorscheme everforest
 
-call LoadConfig('plugins')
-call LoadConfig('base')
-call LoadConfig('plugin-settings')
-call LoadConfig('keymap')
+    "" One Color Settings
+    " set termguicolors
+    " colorscheme one
+    " set background=light " light version
+    " let g:one_allow_italics = 1
+
+    "" GitHub Light Color Settings
+    " lua << EOF
+    " require('github-theme').setup({
+    "     theme_style         = 'light',
+    "     comment_style       = 'italic',
+    "     function_style      = 'italic',
+    "     sidebars            = {'qf', 'vista_kind', 'terminal', 'packer'},
+    "     dark_sidebar        = 'true',
+    "     dark_float          = 'true',
+    "     colors              = {hint = "orange", error = "#ff0000"}
+    " })
+    " EOF
 
 endif
 
