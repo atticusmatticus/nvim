@@ -1,5 +1,6 @@
 call plug#begin()
 
+
 "======================================="
 "     Movement & editation plugins      "
 "======================================="
@@ -10,7 +11,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround' " (o_o) -> cs([ -> [o_o]
 Plug 'tpope/vim-commentary' " gcc -> Normal, gc -> Visual
 " Plug 'jiangmiao/auto-pairs' " Matching parens, quotes etc.
-Plug 'cohama/lexima.vim' " Matching parens, quotes etc.
+" Plug 'cohama/lexima.vim' " Matching parens, quotes etc.
 Plug 'lambdalisue/suda.vim' " read or write files with `sudo` command
 
 
@@ -23,7 +24,9 @@ Plug 'rakr/vim-one'
 Plug 'hoob3rt/lualine.nvim' " lightline replacement
 Plug 'kyazdani42/nvim-web-devicons' " icons for lualine
 " Plug 'kien/rainbow_parentheses.vim'
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Raimondi/delimitMate'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 " Plug 'morhetz/gruvbox'
 " Plug 'glepnir/lspsaga.nvim'
@@ -41,6 +44,7 @@ Plug 'sainnhe/everforest'
 " Plug 'plytophogy/vim-virtualenv' " Virtual env
 " Plug 'airblade/vim-rooter'
 
+
 "======================================="
 "           Workflow plugins            "
 "======================================="
@@ -52,6 +56,7 @@ Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
 " Plug 'jupyter-vim/jupyter-vim' " run jupyter notebooks in nvim
 
+
 "======================================="
 "    Experimental (testing plugins)     "
 "======================================="
@@ -62,7 +67,11 @@ Plug 'ms-jpq/coq_nvim', {'branch': 'coq'} " fast nvim completion main
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} " snippets
 " Plug 'RishabhRD/popfix'
 " Plug 'RishabhRD/nvim-lsputils' " Enhance built in LSP functions
+Plug 'kassio/neoterm'
+
+
 elseif exists('g:vscode')
 endif
+
 
 call plug#end()
