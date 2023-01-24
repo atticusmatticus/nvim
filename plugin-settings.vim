@@ -49,7 +49,12 @@ EOF
 "======================================="
 let g:indentLine_char = '▏'
 let g:indentLine_color_term = 237
-let g:indentLine_fileTypeExclude = ['markdown']
+let g:indentLine_fileTypeExclude = ['markdown', 'json']
+
+" Do not conceal in JSON and Markdown
+let g:vim_json_syntax_conceal = 0
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
 
 "======================================="
 "          rainbow_parentheses          "
@@ -69,7 +74,11 @@ exec 'luafile' expand(g:custom_path . 'lua/nvim-treesitter.lua')
 "            fzf / fzf.vim              "
 "======================================="
 " If installed using Homebrew
-set rtp+=/opt/homebrew/opt/fzf
+if g:uname == "Darwin"
+    set rtp+=/opt/homebrew/opt/fzf
+elseif g:uname == "Linux"
+    set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
+endif
 " Customize fzf colors to match your color scheme
 " - fzf#wrap translates this to a set of `--color` options
 let g:fzf_colors =

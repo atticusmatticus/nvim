@@ -7,15 +7,14 @@ func LoadConfig(name)
     exec 'source' g:custom_path . a:name . '.vim'
 endfunc
 
-"" GruvBox Color Settings
-" colorscheme gruvbox
-" let g:gruvbox_contrast_dark='hard'
+
+let g:uname = system("uname -s")
 
 
 if exists('g:vscode')
     " set termguicolors
 
-    call LoadConfig('plugins_vscode')
+    call LoadConfig('plugins')
     call LoadConfig('base')
     call LoadConfig('plugin-settings')
     call LoadConfig('keymap')
@@ -79,3 +78,4 @@ highlight CursorLineNR gui=bold guifg=Yellow
 " highlight CursorLineNR gui=bold guifg=Blue
 
 set inccommand=split
+set conceallevel=0
