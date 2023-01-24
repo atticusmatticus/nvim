@@ -27,7 +27,6 @@ Plug 'kyazdani42/nvim-web-devicons' " icons for lualine
 " Plug 'Yggdroot/indentLine'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Raimondi/delimitMate'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 " Plug 'morhetz/gruvbox'
 " Plug 'glepnir/lspsaga.nvim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
@@ -60,17 +59,17 @@ Plug 'tpope/vim-fugitive'
 "======================================="
 "    Experimental (testing plugins)     "
 "======================================="
-if has('nvim')
-Plug 'neovim/nvim-lspconfig' " LSP configurations for builtin LSP client
-" Plug 'hrsh7th/nvim-compe' " LSP Completion
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'} " fast nvim completion main 
-Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} " snippets
-" Plug 'RishabhRD/popfix'
-" Plug 'RishabhRD/nvim-lsputils' " Enhance built in LSP functions
-Plug 'kassio/neoterm'
+if exists('g:vscode')
+else
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+    Plug 'neovim/nvim-lspconfig' " LSP configurations for builtin LSP client
+    " Plug 'hrsh7th/nvim-compe' " LSP Completion
+    Plug 'ms-jpq/coq_nvim', {'branch': 'coq'} " fast nvim completion main 
+    Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} " snippets
+    " Plug 'RishabhRD/popfix'
+    " Plug 'RishabhRD/nvim-lsputils' " Enhance built in LSP functions
+    Plug 'kassio/neoterm'
 
-
-elseif exists('g:vscode')
 endif
 
 
