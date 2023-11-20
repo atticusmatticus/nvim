@@ -7,13 +7,17 @@
 "           vim-commentary              "
 "======================================="
 " Add comment character '#' for unsupported filetype
-autocmd FileType json setlocal commentstring=#\ %s
+autocmd FileType json,ipynb setlocal commentstring=#\ %s
+autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 
 
 "======================================="
 "               lualine                 "
 "======================================="
 " Dracula Color Settings: 'dracula-nvim', 'onelight', 'everforest', or 'solarized_light'
+" if exists('g:vscode')
+
+" else
 lua << EOF
 require('lualine').setup {
     options = {
@@ -43,6 +47,7 @@ require('lualine').setup {
     extensions = {'fugitive', 'nerdtree'}
 }
 EOF
+" endif
 
 "======================================="
 "              indentLine               "

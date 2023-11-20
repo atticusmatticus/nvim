@@ -14,22 +14,16 @@ let g:uname = system("uname -s")
 if exists('g:vscode')
     " set termguicolors
 
-    call LoadConfig('plugins')
-    call LoadConfig('base')
-    call LoadConfig('plugin-settings')
-    call LoadConfig('keymap')
-
 else
+    "" ------------------------------------ ""
+    "" Set Terminal Specific Color Settings ""
+    "" ------------------------------------ ""
+
     "" Dracula Color Settings
     let g:dracula_colorterm = 0
     set termguicolors
     colorscheme dracula_pro
     set background=dark
-
-    call LoadConfig('plugins')
-    call LoadConfig('base')
-    call LoadConfig('plugin-settings')
-    call LoadConfig('keymap')
 
     "" Everforest
     " if has('termguicolors')
@@ -66,6 +60,11 @@ else
     " EOF
 
 endif
+
+call LoadConfig('plugins')
+call LoadConfig('base')
+call LoadConfig('plugin-settings')
+call LoadConfig('keymap')
 
 set nocompatible
 
