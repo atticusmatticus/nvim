@@ -140,7 +140,15 @@ nnoremap <leader>pf     :NERDTreeFocus<CR>
 "------------------------------"
 "           undotree           "
 "------------------------------"
-nnoremap <leader>u		:UndotreeShow<CR>
+if exists('g:vscode')
+    " Keep undo/redo lists in sync with VSCode
+    nmap <silent> u <Cmd>call VSCodeNotify('undo')<CR>
+    nmap <silent> <C-r> <Cmd>call VSCodeNotify('redo')<CR>
+
+else
+    nnoremap <leader>u		:UndotreeShow<CR>
+
+endif
 
 
 "------------------------------"

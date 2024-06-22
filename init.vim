@@ -13,6 +13,17 @@ let g:uname = system("uname -s")
 
 if exists('g:vscode')
     " set termguicolors
+    " call LoadConfig('base')
+    " call LoadConfig('plugins')
+    " call LoadConfig('plugin-settings')
+    " call LoadConfig('keymap')
+    " call LoadConfig('vscode_settings')
+
+    :source ~/.config/nvim/base.vim
+    :source ~/.config/nvim/plugins.vim
+    :source ~/.config/nvim/plugin-settings.vim
+    :source ~/.config/nvim/keymap.vim
+    :source ~/.config/nvim/vscode_settings.vim
 
 else
     "" ------------------------------------ ""
@@ -59,22 +70,23 @@ else
     " })
     " EOF
 
+    call LoadConfig('base')
+    call LoadConfig('plugins')
+    call LoadConfig('plugin-settings')
+    call LoadConfig('keymap')
+
+    " Overwrite comment style
+    " highlight Comment gui=italic
+    " Overwrite colorscheme CursorLineNR settings
+    highlight clear CursorLine
+    highlight clear CursorLineNR
+    highlight CursorLineNR gui=bold guifg=Yellow
+    " highlight CursorLineNR gui=bold guifg=Blue
+
 endif
 
-call LoadConfig('plugins')
-call LoadConfig('base')
-call LoadConfig('plugin-settings')
-call LoadConfig('keymap')
 
 set nocompatible
-
-" Overwrite comment style
-" highlight Comment gui=italic
-" Overwrite colorscheme CursorLineNR settings
-highlight clear CursorLine
-highlight clear CursorLineNR
-highlight CursorLineNR gui=bold guifg=Yellow
-" highlight CursorLineNR gui=bold guifg=Blue
 
 set inccommand=split
 set conceallevel=0
