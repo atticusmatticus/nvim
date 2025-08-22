@@ -19,7 +19,7 @@ else
 
 endif
 
-Plug 'tpope/vim-surround' " (o_o) -> cs([ -> [o_o]
+Plug 'tpope/vim-surround' " (o_o) -> cs([ -> [o_o] ; ys{motion}{character}
 
 
 "======================================="
