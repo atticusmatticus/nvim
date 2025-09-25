@@ -36,11 +36,14 @@ nnoremap <leader>wa     :wa<cr>
 nnoremap <leader>xx     :x<cr>
 nnoremap <leader>xa     :xa<cr>
 
+" Close all windows but current and nerdtree
+nnoremap <leader>on     :on<CR>:NERDTreeToggleVCS<CR>:wincmd l<CR>
+
 " Escaping insert/visual modes
-ino jk <esc>
-ino kj <esc>
-cno jj <c-c>
-vno v <esc>
+ino jk      <esc>
+ino kj      <esc>
+cno jj      <c-c>
+vno v       <esc>
 
 " Fold control
 map <leader>F       [fold]
@@ -158,15 +161,6 @@ nnoremap <leader>dc     :lua vim.lsp.diagnostic.clear(0)<CR>
 
 
 "------------------------------"
-"          nvim-compe          "
-"------------------------------"
-" default completion
-" inoremap <silent><expr> <C-y>       compe#complete()
-" inoremap <silent><expr> <CR>        compe#confirm('<CR>')
-" inoremap <silent><expr> <C-e>       compe#close('<C-e>')
-
-
-"------------------------------"
 "        lspsaga.nvim          "
 "------------------------------"
 " lsp provider to find the cursor word definition and reference
@@ -214,43 +208,58 @@ autocmd CursorHoldI * silent!       :Lspsaga signature_help
 "------------------------------"
 "        telescope.nvim        "
 "------------------------------"
-" " Find files using Telescope command-line sugar.
-" nnoremap <leader>ff     :Telescope find_files<CR>
-" nnoremap <leader>fg     :Telescope live_grep<CR>
-" nnoremap <leader>fb     :Telescope buffers<CR>
-" nnoremap <leader>fh     :Telescope help_tags<CR>
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 
 "------------------------------"
 "        fzf / fzf.vim         "
 "------------------------------"
-nnoremap <leader>ff     :Files<CR>
-nnoremap <leader>fg     :Rg<CR>
+" nnoremap <leader>ff     :Files<CR>
+" nnoremap <leader>fg     :Rg<CR>
 nnoremap <leader>fh     :History<CR>
 nnoremap <leader>f/     :History/<CR>
 nnoremap <leader>f:     :History:<CR>
 nnoremap <leader>fc     :Commands<CR>
 nnoremap <leader>fm     :Maps<CR>
 
-" Mapping selecting mappings
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
+" " Mapping selecting mappings
+" nmap <leader><tab> <plug>(fzf-maps-n)
+" xmap <leader><tab> <plug>(fzf-maps-x)
+" omap <leader><tab> <plug>(fzf-maps-o)
 
-" Insert mode completion
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-l> <plug>(fzf-complete-line)
+" " Insert mode completion
+" imap <c-x><c-k> <plug>(fzf-complete-word)
+" imap <c-x><c-f> <plug>(fzf-complete-path)
+" imap <c-x><c-l> <plug>(fzf-complete-line)
 
 
 "------------------------------"
 "         jupyter.vim          "
 "------------------------------"
-noremap <leader>nC      :JupyterConnect<cr>
-noremap <leader>nR      :JupyterRunFile<cr>
-noremap <leader>nc      :JupyterSendCell<cr>
+" noremap <leader>nC      :JupyterConnect<cr>
+" noremap <leader>nR      :JupyterRunFile<cr>
+" noremap <leader>nc      :JupyterSendCell<cr>
 
-" Runs current line if no range given :[1,2]JupyterSendRange
-noremap <leader>nr      :JupyterSendRange<cr>
+" " Runs current line if no range given :[1,2]JupyterSendRange
+" noremap <leader>nr      :JupyterSendRange<cr>
+
+
+"------------------------------"
+"       telekasten.vim         "
+"------------------------------"
+noremap <leader>z       :Telekasten panel<cr>
+noremap <leader>zf		:Telekasten find_notes<cr>
+noremap <leader>zg		:Telekasten search_notes<cr>
+noremap <leader>zd		:Telekasten goto_today<cr>
+noremap <leader>zz		:Telekasten follow_link<cr>
+noremap <leader>zn		:Telekasten new_note<cr>
+noremap <leader>zc		:Telekasten show_calendar<cr>
+noremap <leader>zb		:Telekasten show_backlinks<cr>
+noremap <leader>zI		:Telekasten insert_img_link<cr>
+
 
 

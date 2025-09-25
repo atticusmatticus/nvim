@@ -12,13 +12,6 @@ let g:uname = system("uname -s")
 
 
 if exists('g:vscode')
-    " set termguicolors
-    " call LoadConfig('base')
-    " call LoadConfig('plugins')
-    " call LoadConfig('plugin-settings')
-    " call LoadConfig('keymap')
-    " call LoadConfig('vscode_settings')
-
     :source ~/.config/nvim/base.vim
     :source ~/.config/nvim/plugins.vim
     :source ~/.config/nvim/plugin-settings.vim
