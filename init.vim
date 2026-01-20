@@ -29,40 +29,6 @@ else
     colorscheme dracula_pro
     set background=dark
 
-    "" Everforest
-    " if has('termguicolors')
-    "     set termguicolors
-    " endif
-    " " For dark version.
-    " " set background=dark
-    " " For light version.
-    " set background=light
-    " " Set contrast. This configuration option should be placed before `colorscheme everforest`.
-    " " Available values: 'hard', 'medium'(default), 'soft'
-    " let g:everforest_background = 'medium'
-    " " For better performance
-    " let g:everforest_better_performance = 1
-    " colorscheme everforest
-
-    "" One Color Settings
-    " set termguicolors
-    " colorscheme one
-    " set background=light " light version
-    " let g:one_allow_italics = 1
-
-    "" GitHub Light Color Settings
-    " lua << EOF
-    " require('github-theme').setup({
-    "     theme_style         = 'light',
-    "     comment_style       = 'italic',
-    "     function_style      = 'italic',
-    "     sidebars            = {'qf', 'vista_kind', 'terminal', 'packer'},
-    "     dark_sidebar        = 'true',
-    "     dark_float          = 'true',
-    "     colors              = {hint = "orange", error = "#ff0000"}
-    " })
-    " EOF
-
     call LoadConfig('base')
     call LoadConfig('plugins')
     call LoadConfig('plugin-settings')
