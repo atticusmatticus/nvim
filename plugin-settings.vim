@@ -75,7 +75,7 @@ let g:vim_markdown_conceal_code_blocks = 0
 "======================================="
 "           nvim-treesitter             "
 "======================================="
-exec 'luafile' expand(g:custom_path . 'lua/nvim-treesitter.lua')
+" exec 'luafile' expand(g:custom_path . 'lua/nvim-treesitter.lua')
  
 "======================================="
 "            fzf / fzf.vim              "
@@ -143,11 +143,11 @@ exec 'luafile' expand(g:custom_path . 'lua/nvim-telescope.lua')
 "======================================="
 "           telekasten.nvim             "
 "======================================="
-lua << EOF
-    require('telekasten').setup({
-      home = vim.fn.expand("~/zettelkasten"), -- Put the name of your notes directory here
-    })
-EOF
 exec 'luafile' expand(g:custom_path . 'lua/nvim-telekasten.lua')
+
+"======================================="
+"              mason.nvim               "
+"======================================="
+" exec 'luafile' expand(g:custom_path . 'lua/mason-org.lua')
 
 endif
