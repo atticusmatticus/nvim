@@ -1,5 +1,3 @@
--- local nvim_lsp = require('lspconfig')
-
 local chain_complete_list = {
     default = {
         { complete_items = { 'lsp', 'snippet' } },
@@ -63,11 +61,12 @@ local on_attach = function(client, bufnr)
     end
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { "pyright", "bashls", "vimls", "clangd", "texlab", "r_language_server" } -- "fortls", "rnix", "cssls",
+-- Use a loop to conveniently setup multiple servers and map buffer local keybindings when the language server attaches
+local servers = { "pyright", "bashls", "vimls", "clangd", "texlab" } -- "fortls"
+-- require("mason-lspconfig").setup {
+--     ensure_installed = servers
+-- }
 for _, lsp in pairs(servers) do
-    -- require('lspconfig')[lsp].setup {
     vim.lsp.config(lsp, {
         on_attach = on_attach,
         flags = {
