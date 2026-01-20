@@ -96,6 +96,10 @@ inoremap <expr> <S-Tab>         pumvisible() ? "<C-p>" : "<S-Tab>"
 " inoremap <expr> <Esc>           pumvisible() ? (complete_info().selected == -1 ? "<Esc>" : "<C-e>")  : "<Esc>"
 " inoremap <expr> <CR>            pumvisible() ? (complete_info().selected == -1 ? "<C-e><CR>" : "<C-y>") : "<CR>"
 
+""" Spelling mapping
+map <leader>sp      :Spell<CR>
+map <leader>spz     1z=<CR>
+
 
 
 "======================================="
@@ -210,7 +214,11 @@ autocmd CursorHoldI * silent!       :Lspsaga signature_help
 "------------------------------"
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+" nnoremap <leader>fg <cmd>Telescope live_grep<cr> " bug in telescope core that breaks fuzzy matching
+nnoremap <leader>fg <cmd>Telescope grep_string search=<cr>
+nnoremap <leader>fm <cmd>Telescope keymaps<cr>
+nnoremap <leader>fc <cmd>Telescope commands<cr>
+nnoremap <leader>fh <cmd>Telescope command_history<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
@@ -220,11 +228,11 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 "------------------------------"
 " nnoremap <leader>ff     :Files<CR>
 " nnoremap <leader>fg     :Rg<CR>
-nnoremap <leader>fh     :History<CR>
+" nnoremap <leader>fh     :History<CR>
 nnoremap <leader>f/     :History/<CR>
 nnoremap <leader>f:     :History:<CR>
-nnoremap <leader>fc     :Commands<CR>
-nnoremap <leader>fm     :Maps<CR>
+" nnoremap <leader>fc     :Commands<CR>
+" nnoremap <leader>fm     :Maps<CR>
 
 " " Mapping selecting mappings
 " nmap <leader><tab> <plug>(fzf-maps-n)
@@ -255,11 +263,10 @@ noremap <leader>z       :Telekasten panel<cr>
 noremap <leader>zf		:Telekasten find_notes<cr>
 noremap <leader>zg		:Telekasten search_notes<cr>
 noremap <leader>zd		:Telekasten goto_today<cr>
-noremap <leader>zz		:Telekasten follow_link<cr>
+noremap <leader>zl		:Telekasten follow_link<cr>
+noremap <leader>zi		:Telekasten insert_link<cr>
 noremap <leader>zn		:Telekasten new_note<cr>
 noremap <leader>zc		:Telekasten show_calendar<cr>
 noremap <leader>zb		:Telekasten show_backlinks<cr>
 noremap <leader>zI		:Telekasten insert_img_link<cr>
-
-
 
