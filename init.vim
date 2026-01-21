@@ -11,38 +11,33 @@ endfunc
 let g:uname = system("uname -s")
 
 
-if exists('g:vscode')
-    :source ~/.config/nvim/base.vim
-    :source ~/.config/nvim/plugins.vim
-    :source ~/.config/nvim/plugin-settings.vim
-    :source ~/.config/nvim/keymap.vim
-    :source ~/.config/nvim/vscode_settings.vim
+"" ------------------------------------ ""
+"" Set Terminal Specific Color Settings ""
+"" ------------------------------------ ""
 
-else
-    "" ------------------------------------ ""
-    "" Set Terminal Specific Color Settings ""
-    "" ------------------------------------ ""
+"" Dracula Color Settings
+let g:dracula_colorterm = 0
+set termguicolors
+colorscheme dracula_pro
+set background=dark
 
-    "" Dracula Color Settings
-    let g:dracula_colorterm = 0
-    set termguicolors
-    colorscheme dracula_pro
-    set background=dark
+lua << EOF
+require("config.lazy")
+EOF
 
-    call LoadConfig('base')
-    call LoadConfig('plugins')
-    call LoadConfig('plugin-settings')
-    call LoadConfig('keymap')
+call LoadConfig('base')
+" call LoadConfig('plugins')
+call LoadConfig('plugin-settings')
+call LoadConfig('keymap')
 
-    " Overwrite comment style
-    " highlight Comment gui=italic
-    " Overwrite colorscheme CursorLineNR settings
-    highlight clear CursorLine
-    highlight clear CursorLineNR
-    highlight CursorLineNR gui=bold guifg=Yellow
-    " highlight CursorLineNR gui=bold guifg=Blue
+" Overwrite comment style
+" highlight Comment gui=italic
+" Overwrite colorscheme CursorLineNR settings
+highlight clear CursorLine
+highlight clear CursorLineNR
+highlight CursorLineNR gui=bold guifg=Yellow
+" highlight CursorLineNR gui=bold guifg=Blue
 
-endif
 
 
 set nocompatible

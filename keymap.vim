@@ -107,41 +107,16 @@ map <leader>spz     1z=<CR>
 "======================================="
 
 "------------------------------"
+"          lazy.nvim           "
+"------------------------------"
+nnoremap <leader><C-l>      :Lazy<CR>
+
+"------------------------------"
 "     nerdtree/CHADtree        "
 "------------------------------"
 nnoremap <leader>pv     :NERDTreeToggleVCS<CR>
 nnoremap <leader>pf     :NERDTreeFocus<CR>
 " nnoremap <leader>pv     :CHADopen<CR>
-
-
-"------------------------------"
-"             vsnip            "
-"------------------------------"
-" " Expand
-" imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
-" smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
-
-" " Expand or jump
-" imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-" smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-
-" " Jump forward or backward
-" imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-" smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-" imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-" smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-
-" " Select or cut text to use as $TM_SELECTED_TEXT in the next snippet.
-" " See https://github.com/hrsh7th/vim-vsnip/pull/50
-" nmap        s   <Plug>(vsnip-select-text)
-" xmap        s   <Plug>(vsnip-select-text)
-" nmap        S   <Plug>(vsnip-cut-text)
-" xmap        S   <Plug>(vsnip-cut-text)
-
-" " If you want to use snippet for multiple filetypes, you can `g:vsnip_filetypes` for it.
-" let g:vsnip_filetypes = {}
-" let g:vsnip_filetypes.javascriptreact = ['javascript']
-" let g:vsnip_filetypes.typescriptreact = ['typescript']
 
 
 "------------------------------"
@@ -167,46 +142,46 @@ nnoremap <leader>dc     :lua vim.lsp.diagnostic.clear(0)<CR>
 "------------------------------"
 "        lspsaga.nvim          "
 "------------------------------"
-" lsp provider to find the cursor word definition and reference
-nnoremap <silent><leader>gh         :Lspsaga lsp_finder<CR>
+" " lsp provider to find the cursor word definition and reference
+" nnoremap <silent><leader>gh         :Lspsaga lsp_finder<CR>
 
-" code action
-nnoremap <silent><leader>ca         :Lspsaga code_action<CR>
-vnoremap <silent><leader>ca         :<C-U>Lspsaga range_code_action<CR>
+" " code action
+" nnoremap <silent><leader>ca         :Lspsaga code_action<CR>
+" vnoremap <silent><leader>ca         :<C-U>Lspsaga range_code_action<CR>
 
-" show hover doc
-nnoremap <silent> K                 :Lspsaga hover_doc<CR>
-" scroll down hover doc or scroll in definition preview
-nnoremap <silent> <C-f>             <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
-" scroll up hover doc
-nnoremap <silent> <C-b>             <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
+" " show hover doc
+" nnoremap <silent> K                 :Lspsaga hover_doc<CR>
+" " scroll down hover doc or scroll in definition preview
+" nnoremap <silent> <C-f>             <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
+" " scroll up hover doc
+" nnoremap <silent> <C-b>             <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
 
-" show signature help
-nnoremap <silent> <C-k>             :Lspsaga signature_help<CR>
+" " show signature help
+" nnoremap <silent> <C-k>             :Lspsaga signature_help<CR>
 
-" rename
-" close rename win use <C-c> in insert mode or `q` in noremal mode or `:q`
-nnoremap <silent><leader>rn         :Lspsaga rename<CR>
+" " rename
+" " close rename win use <C-c> in insert mode or `q` in noremal mode or `:q`
+" nnoremap <silent><leader>rn         :Lspsaga rename<CR>
 
-" preview definition
-nnoremap <silent><leader>dp         :Lspsaga preview_definition<CR>
+" " preview definition
+" nnoremap <silent><leader>dp         :Lspsaga preview_definition<CR>
 
-" show diagnostics
-nnoremap <silent><leader>dd         :Lspsaga show_line_diagnostics<CR>
-" jump diagnostic
-nnoremap <silent> [e                :Lspsaga diagnostic_jump_next<CR>
-nnoremap <silent> ]e                :Lspsaga diagnostic_jump_prev<CR>
+" " show diagnostics
+" nnoremap <silent><leader>dd         :Lspsaga show_line_diagnostics<CR>
+" " jump diagnostic
+" nnoremap <silent> [e                :Lspsaga diagnostic_jump_next<CR>
+" nnoremap <silent> ]e                :Lspsaga diagnostic_jump_prev<CR>
 
-" float terminal also you can pass the cli command in open_float_terminal function
-nnoremap <silent> <A-d>             :Lspsaga open_floaterm<CR>
-tnoremap <silent> <A-d> <C-\><C-n>  :Lspsaga close_floaterm<CR>
+" " float terminal also you can pass the cli command in open_float_terminal function
+" nnoremap <silent> <A-d>             :Lspsaga open_floaterm<CR>
+" tnoremap <silent> <A-d> <C-\><C-n>  :Lspsaga close_floaterm<CR>
 
 
-" display a float window with diagnostic info using saga
-" vim.cmd [[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()]]
-" autocmd CursorHold *                :Lspsaga show_line_diagnostics
-" vim.cmd [[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]]
-autocmd CursorHoldI * silent!       :Lspsaga signature_help
+" " display a float window with diagnostic info using saga
+" " vim.cmd [[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()]]
+" " autocmd CursorHold *                :Lspsaga show_line_diagnostics
+" " vim.cmd [[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]]
+" autocmd CursorHoldI * silent!       :Lspsaga signature_help
 
 
 "------------------------------"

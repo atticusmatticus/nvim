@@ -118,14 +118,6 @@ let NERDTreeShowHidden=1
 exec 'luafile' expand(g:custom_path . 'lua/nvim-lspconfig.lua')
 
 "======================================="
-"              coq_nvim                 "
-"======================================="
-" launch :COQnow when nvim starts
-let g:coq_settings = { 'auto_start': v:true } "| 'shut-up' }
-" launch :COQnow when nvim starts without launch message
-" let g:coq_settings = { 'auto_start': 'shut-up' }
-
-"======================================="
 "            jupyter-vim                "
 "======================================="
 " Prevent default keybindings
@@ -145,9 +137,5 @@ exec 'luafile' expand(g:custom_path . 'lua/nvim-telescope.lua')
 "======================================="
 exec 'luafile' expand(g:custom_path . 'lua/nvim-telekasten.lua')
 
-"======================================="
-"              mason.nvim               "
-"======================================="
-" exec 'luafile' expand(g:custom_path . 'lua/mason-org.lua')
 
 endif
